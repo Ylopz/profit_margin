@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profit Margin Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Profit Margin Calculator</h1>
+
+    <div id="alert" class="hidden">
+      Please enter the subtotal before calculating.
+    </div>
+
+    <div class="mobile-toggle">
+      <label for="mobile-mode" id="mobile-mode-label">Mobile Mode:</label>
+      <label class="switch">
+        <input type="checkbox" id="mobile-mode">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <form id="profit-form">
+      <div id="parts-container">
+        
+      </div>
+      <button type="button" id="add-part">Add Part</button>
+
+      <div class="additional-costs">
+        <div>
+          <label for="recalibration-cost">Recalibration:</label>
+          <input type="number" id="recalibration-cost" name="recalibration-cost" value="0">
+        </div>
+        <div>
+          <label for="molding-cost">Molding:</label>
+          <input type="number" id="molding-cost" name="molding-cost" value="0">
+        </div>
+      </div>
+
+      <div class="subtotal">
+        <label for="subtotal">Subtotal:</label>
+        <input type="number" id="subtotal" name="subtotal" required>
+      </div>
+
+      <button type="button" id="calculate">Calculate</button>
+    </form>
+
+    <div id="results" class="hidden">
+      <h2>Results</h2>
+      <p>Total Costs: <span id="total-costs"></span></p>
+      <p>Entered Subtotal: <span id="entered-subtotal"></span></p>
+      <p>Profit Margin: <span id="profit-margin"></span></p>
+
+      <h3>Cost Breakdown</h3>
+      <ul id="cost-breakdown">
+        <li>Parts: <span id="parts-total"></span></li>
+        <li>Recalibration: <span id="recalibration-total"></span></li>
+        <li>Molding: <span id="molding-total"></span></li>
+        <li>Minimum Cost: <span id="minimum-cost"></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
