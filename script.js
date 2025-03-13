@@ -64,7 +64,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const recalibrationCost = parseFloat(document.getElementById('recalibration-cost').value) || 0;
     let moldingCost = parseFloat(document.getElementById('molding-cost').value) || 0;
-    moldingCost += 20;
+    if(moldingCost > 0){
+      moldingCost += 20;
+    }
     const subtotal = parseFloat(document.getElementById('subtotal').value);
 
     // Determine minimum cost based on mobile mode toggle
